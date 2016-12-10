@@ -1,0 +1,34 @@
+{
+  "name": "redux-black-magic",
+  "version": "1.0.0",
+  "description": "Magically maps actions to reducers without any magic strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishnaglick/redux-black-magic.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "black",
+    "magic",
+    "action",
+    "actions",
+    "reducer",
+    "reducers"
+  ],
+  "author": "Krishna Glick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishnaglick/redux-black-magic/issues"
+  },
+  "homepage": "https://github.com/krishnaglick/redux-black-magic#readme",
+  "dependencies": {
+    "globby": "^6.1.0",
+    "lodash": "^4.17.1",
+    "pre-build-webpack": "^0.1.0"
+  }
+}
