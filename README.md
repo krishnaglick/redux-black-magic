@@ -26,3 +26,5 @@ The action and reudcer templates have a 'default' setting, what comes with black
  - REDUCER_TEMPLATE
  - ACTIONS_FOLDER
  - REDUCERS_FOLDER
+
+A sample app can be found (here)[https://github.com/krishnaglick/redux-black-magic-sample-app].
