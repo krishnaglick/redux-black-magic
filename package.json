@@ -1,6 +1,6 @@
 {
   "name": "redux-black-magic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Magically maps actions to reducers without any magic strings",
   "main": "index.js",
   "engines": {
