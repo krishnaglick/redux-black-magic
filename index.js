@@ -21,9 +21,9 @@ ReactBlackMagic.prototype.apply = function(compiler) {
 };
 
 ReactBlackMagic.prototype.generateActionList = function() {
-  const globbedActions = _.filter(globby.sync(`${this.actionsFolder}/**/*.js`), p => p.indexOf('index') === -1);
+  const globbedActions = _.map(_.filter(globby.sync(`${this.actionsFolder}/**/*.js`), p => p.indexOf('index') === -1), p => path.resolve(p));
   const actionTemplate = fs.readFileSync(this.actionTemplate, { encoding: 'UTF8'})
-    .replace(/'actionsReplace'/g, _.map(globbedActions, a => `require('.${a.split('actions')[1]}')`).join(',\n  '));
+    .replace(/'actionsReplace'/g, _.map(globbedActions, a => `require('.${a.split(this.actionsFolder)[1].replace(/\\/g, '/')}')`).join(',\n  '));
   const actionIndexPath = path.resolve(`${this.actionsFolder}/index.js`);
   fs.writeFileSync(actionIndexPath, actionTemplate);
 };
