@@ -33,10 +33,10 @@ ReactBlackMagic.prototype.generateReducerList = function() {
   const reducers = _.map(globbedReducers, (reducerPath) => {
     return {
       name: _.camelCase(reducerPath.split('/').splice(-1)[0].split('.')[0]),
-      fileName: reducerPath.replace(this.reducersFolder, '.')
+      fileName: path.resolve(reducerPath).replace(this.reducersFolder, '.').replace(/\\/g, '/')
     };
   });
-  const reducerMapping = _.map(reducers, ({name, fileName}) => `${name}: require('${fileName.split(this.reducersFolder)[1]}')`).join(',\n  ');
+  const reducerMapping = _.map(reducers, ({name, fileName}) => `${name}: require('${fileName}')`).join(',\n  ');
   const reducerTemplate = fs.readFileSync(this.reducerTemplate, { encoding: 'UTF8'})
     .replace(/reducerReplacer/g, reducerMapping);
   const reducerIndexPath = path.resolve(`${this.reducersFolder}/index.js`);

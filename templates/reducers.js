@@ -1,7 +1,6 @@
 
 import _ from 'lodash';
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
 
 const reducers = {
   reducerReplacer
@@ -25,8 +24,7 @@ _.forEach(Object.keys(reducers), key => {
 
 
 const reducer = combineReducers({
-  ...reducerContainers,
-  routing
+  ...reducerContainers
 });
 
 export default reducer;
